@@ -170,7 +170,7 @@ class Inventory(object):
             raise errors.AnsibleError('invalid host pattern: %s' % pattern_str)
 
         for item in items:
-            if pattern.match(getattr(item, item_attr)):
+            if pattern.search(getattr(item, item_attr)):
                 results.append(item)
         return results
 
